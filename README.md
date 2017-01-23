@@ -5,8 +5,16 @@ For this assignment I wrote a test suite using Jasmine to test several features 
 
 If you want to check out the test report, the results are integrated at the bottom of the webpage. Just visit [this link](https://etokheim.github.io/frontend-nanodegree-feedreader/) or clone/download the project files.
 
-## Download
-To download click the "Clone or download" button and "Download ZIP" or clone the repository by copying the URL and pasting it into your terminal (you need to install git first) like this:
+## Download and run
+### If you don't have Git installed
+1. Click the "Clone or download" button and "Download ZIP"
+2. Unzip folder
+3. Open index.html
+
+### If you have Git installed
+If you have Git installed you can clone the repository by copying the URL (from the "Clone or download" button) and pasting it into your terminal like this:
 ```bash
 git clone https://github.com/etokheim/frontend-nanodegree-feedreader.git
 ```
+
+Then open the index.html file.
