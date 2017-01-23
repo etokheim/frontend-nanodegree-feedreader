@@ -53,25 +53,32 @@ $(function() {
 			loadFeed(0, done);
 		});
 
-		it('has atleast one entry.', function(done) {
+		it('has atleast one entry.', function() {
 			expect($('.feed').find('.entry').length).not.toBe(0);
-
-			done();
 		});
 	});
 
 	describe('New Feed Selection', function() {
-		var initialFeed = $('.feed');
+		var feedOne;
+		var feedTwo;
 
 		// Asynchronous
+		// first load feed one, and then replace with feed 2
 		beforeEach(function(done) {
-			loadFeed(0, done);
+			loadFeed(1, function() {
+				feedOne = $('.feed').html();
+				
+
+				loadFeed(2, function() {
+					feedTwo = $('.feed').html();
+					
+					done();
+				});
+			});
 		});
 
-		it('the new feed was not equal to the initial feed.', function(done) {
-			expect(initialFeed).not.toBe($('.feed'));
-
-			done();
+		it('The feed returned from ' + allFeeds[1].name + ' is not the same as the feed returned from ' + allFeeds[2].name + '.', function() {
+			expect(feedOne).not.toEqual(feedTwo);
 		});
 	});
 }());
